@@ -12,16 +12,22 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://src/actor.gd"
+"path": "res://src/Actor.gd"
 }, {
-"base": "Actor",
-"class": "Player",
+"base": "Node",
+"class": "ActorStats",
 "language": "GDScript",
-"path": "res://src/player/player.gd"
+"path": "res://src/ActorStats.gd"
+}, {
+"base": "Resource",
+"class": "StartingActorStats",
+"language": "GDScript",
+"path": "res://resources/actor_stats/StartingActorStats.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Player": ""
+"ActorStats": "",
+"StartingActorStats": ""
 }
 
 [application]

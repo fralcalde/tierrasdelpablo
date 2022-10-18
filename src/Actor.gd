@@ -1,10 +1,13 @@
 class_name Actor
 extends KinematicBody2D
 
-# var stats
+
+export var starting_stats : Resource
+onready var stats = $ActorStats
 # var inventory
 # var skills
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	stats.initialize_stats(starting_stats)
+

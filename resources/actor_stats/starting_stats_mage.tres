@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/actor_stats/StartingActorStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+job_class = "Mage"
+max_health = 10
+max_mana = 100
+strength = 5
+agility = 5
+intelligence = 8
+experience = 0
+level = 0
+skill_points = 1
