@@ -2,7 +2,7 @@ class_name ActorStats
 extends Node
 
 # Estos valores se consiguen de la siguiente grafica:
-# https://www.desmos.com/calculator/6h1x9vn1sk
+# https://www.desmos.com/calculator/umznbmitl7
 var EXP_OFFSET = 10
 var EXP_LINEAR_FACTOR = 4
 var EXP_EXPONENT = 1.8
@@ -70,6 +70,7 @@ func get_required_exp(_level : int) -> int:
 
 
 func add_experience(amount : int):
+	assert(amount >= 0, "Tried to substract experience")
 	experience_total += amount
 	experience += amount
 	

@@ -13,8 +13,8 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_up"):
 		stats.add_experience(5)
-		print("Level: ", stats.level,\
-		", Exp: ", stats.experience,\
-		", NextLevel: ", stats.get_required_exp(stats.level),\
-		", Total: ", stats.experience_total,\
-		", SkillPoints: ", stats.skill_points)
+		printt("Level: ", stats.level,\
+		"Exp: ", stats.experience,\
+		"NextLevel: ", stats.get_required_exp(stats.level),\
+		"Total: ", stats.experience_total,\
+		"SkillPoints: ", stats.skill_points)
