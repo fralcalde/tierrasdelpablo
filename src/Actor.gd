@@ -3,9 +3,10 @@ extends KinematicBody2D
 
 
 export var starting_stats : Resource
+export var starting_skills : Resource
 onready var stats = $ActorStats
 # var inventory
-# var skills
+onready var primary_skill = $PrimarySkill
 
 var _velocity : Vector2
 var MOVE_SPEED = 100
@@ -23,3 +24,11 @@ func _physics_process(_delta):
 func move(vel):
 	_velocity = vel.normalized() * MOVE_SPEED
 
+
+func cast_primary_skill(target : Vector2):
+	var skill = primary_skill.get_child(0)
+	if skill == null:
+		return
+	
+	$PrimarySkill.look_at(target)
+	skill.execute(target, stats)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Actor.gd" type="Script" id=1]
 [ext_resource path="res://src/ActorStats.gd" type="Script" id=2]
 [ext_resource path="res://resources/actor_stats/starting_stats_mage.tres" type="Resource" id=3]
+[ext_resource path="res://resources/actor_skills/mage_skills.tres" type="Resource" id=4]
+[ext_resource path="res://scenes/skills/SimpleProjectileCaster.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -15,8 +17,10 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="Mage" type="KinematicBody2D"]
+collision_layer = 0
 script = ExtResource( 1 )
 starting_stats = ExtResource( 3 )
+starting_skills = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
@@ -26,3 +30,7 @@ shape = SubResource( 2 )
 
 [node name="ActorStats" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="PrimarySkill" type="Node2D" parent="."]
+
+[node name="SimpleProjectileCaster" parent="PrimarySkill" instance=ExtResource( 5 )]
